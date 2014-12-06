@@ -1,5 +1,5 @@
-class ShoesController < ApplicationController
-  before_action :set_shoe, only: [:show]
+class Admin::ShoesController < Admin::AdminController
+  before_action :set_shoe, only: [:show, :edit, :update, :destroy]
 
   # GET /shoes
   # GET /shoes.json
@@ -17,6 +17,10 @@ class ShoesController < ApplicationController
     @shoe = Shoe.new
   end
 
+  # GET /shoes/1/edit
+  def edit
+  end
+
   # POST /shoes
   # POST /shoes.json
   def create
@@ -30,6 +34,30 @@ class ShoesController < ApplicationController
         format.html { render :new }
         format.json { render json: @shoe.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # PATCH/PUT /shoes/1
+  # PATCH/PUT /shoes/1.json
+  def update
+    respond_to do |format|
+      if @shoe.update(shoe_params)
+        format.html { redirect_to @shoe, notice: 'Shoe was successfully updated.' }
+        format.json { render :show, status: :ok, location: @shoe }
+      else
+        format.html { render :edit }
+        format.json { render json: @shoe.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /shoes/1
+  # DELETE /shoes/1.json
+  def destroy
+    @shoe.destroy
+    respond_to do |format|
+      format.html { redirect_to shoes_url, notice: 'Shoe was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

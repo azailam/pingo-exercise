@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :companies
+  resources :companies, only: [:index, :new, :create, :show]
 
-  resources :categories
+  resources :categories, only: [:index, :new, :create, :show]
 
-  resources :shoes
+  resources :shoes, only: [:index, :new, :create, :show]
+  namespace :admin do    
+      resources :shoes
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

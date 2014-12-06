@@ -24,7 +24,9 @@
         <td><%= shoe.company_id %></td>
         <td><%= shoe.cover %></td>
         <td><%= shoe.count_view %></td>
-        <td><%= link_to 'Show', shoe %></td>        
+        <td><%= link_to 'Show', admin_shoe_path(shoe) %></td>
+        <td><%= link_to 'Edit', edit_admin_shoe_path(shoe) %></td>
+        <td><%= link_to 'Destroy', admin_shoe_path(shoe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Shoe', new_shoe_path %>
+<%= link_to 'New Shoe', new_admin_shoe_path %>
