@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @shoe.price %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @shoe.color %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @shoe.size %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @shoe.category_id %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @shoe.company_id %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @shoe.cover %>
+</p>
+
+<p>
+  <strong>Count view:</strong>
+  <%= @shoe.count_view %>
+</p>
+
+<%= link_to 'Edit', edit_shoe_path(@shoe) %> |
+<%= link_to 'Back', shoes_path %>

@@ -1,0 +1,45 @@
+<%= form_for @shoe, :url => shoes_path, :html => { :multipart => true }  do |f| %>
+  <% if @shoe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shoe.errors.count, "error") %> prohibited this shoe from being saved:</h2>
+
+      <ul>
+      <% @shoe.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.number_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :company_id %><br>
+    <%= f.number_field :company_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cover %><br>
+    <%= f.file_field :cover %>
+  </div>
+  <div class="field">
+    <%= f.label :count_view %><br>
+    <%= f.number_field :count_view %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
