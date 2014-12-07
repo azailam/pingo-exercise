@@ -29,6 +29,7 @@ gem 'paperclip'
 gem 'devise'
 gem "rolify"
 gem 'acts_as_commentable'
+gem 'will_paginate'
 
 
 # Use ActiveModel has_secure_password

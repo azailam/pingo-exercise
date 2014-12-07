@@ -15,6 +15,7 @@
   </thead>
 
   <tbody>
+
     <% @shoes.each do |shoe| %>
       <tr>
         <td><%= shoe.price %></td>
@@ -30,6 +31,11 @@
   </tbody>
 </table>
 
+<%= page_entries_info @shoes, :entry_name => 'shoe'  %>
+<%= will_paginate @shoes %>
+
+
+<br>
 <br>
 
 <%= link_to 'New Shoe', new_shoe_path %>

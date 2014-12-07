@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_shoes
       @category = Category.find(params[:id])
-      @shoes = @category.shoes.where(category_id:params[:id])
+      @shoes = @category.shoes.avaiable(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
