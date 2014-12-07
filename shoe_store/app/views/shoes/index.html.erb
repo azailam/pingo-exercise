@@ -22,7 +22,7 @@
         <td><%= shoe.size %></td>
         <td><%= shoe.category_id %></td>
         <td><%= shoe.company_id %></td>
-        <td><%= shoe.cover %></td>
+        <td><%= image_tag shoe.cover.url(:thumb) %></td>
         <td><%= shoe.count_view %></td>
         <td><%= link_to 'Show', shoe %></td>        
       </tr>

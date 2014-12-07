@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :new, :create, :show]
 
   resources :shoes, only: [:index, :new, :create, :show]
+  resources :comments
   namespace :admin do  
       authenticate :user, lambda { |user| user.is_admin? } do  
         resources :shoes

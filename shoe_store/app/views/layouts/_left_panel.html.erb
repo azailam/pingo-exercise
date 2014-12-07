@@ -8,7 +8,7 @@
               <td height="216" valign="top">
                 <div class="RightMenu">
                   <ul>
-                    <li><a href= <%= categories_path %>>All categories</a></li>
+                    <li><a href= <%= shoes_path %>>All Shoes</a></li>
                     <% @categories.each do|cat|%>
                     <li><a href=<%= category_path(cat) %>><%= cat.name%></a></li>
                       <% end%>

@@ -10,6 +10,8 @@ class ShoesController < ApplicationController
   # GET /shoes/1
   # GET /shoes/1.json
   def show
+    @new_comment = Comment.new
+    @comments = @shoe.comments.order("updated_at DESC")
   end
 
   # GET /shoes/new

@@ -36,3 +36,31 @@
 </p>
 
 <%= link_to 'Back', shoes_path %>
+
+<table id = "all_comments" style="width: 600px;">
+  <tr>
+    <th>User email</th>
+    <th>Comment</th>
+  </tr>
+  <% @comments.each_with_index do |comment, idx| %>
+    <tr class=<%= idx.odd? ? "odd" : ""%>>
+      <td><%= comment.user.email%></td>
+      <td><%= comment.comment%></td>
+    </tr>
+  <% end %>
+</table>
+<%= form_for @new_comment, :remote => true do |f| %>
+  <h4>Add a new comment</h4>
+  <span class="field">
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+  </span>
+  
+  <span class="field">
+    <%= f.label :user_id %>
+    <%= select(:comment, :user_id, options_from_collection_for_select(User.all, :id, :email)) %>
+  </span>
+  <input type = "hidden" name = 'comment[commentable_type]', value=<%= @shoe.class.name%>>
+<input type = "hidden" name = 'comment[commentable_id]', value=<%= @shoe.id%>>
+  <span style= "margin-left: 10px;"><%= f.submit %></span>
+<% end %>

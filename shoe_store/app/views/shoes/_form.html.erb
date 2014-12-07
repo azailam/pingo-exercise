@@ -25,11 +25,11 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= select(:shoe, :category_id, options_from_collection_for_select(@categories, :id, :name))  %>
   </div>
   <div class="field">
     <%= f.label :company_id %><br>
-    <%= f.number_field :company_id %>
+    <%= select(:shoe, :company_id, options_from_collection_for_select(Company.all, :id, :name))   %>
   </div>
   <div class="field">
     <%= f.label :cover %><br>
