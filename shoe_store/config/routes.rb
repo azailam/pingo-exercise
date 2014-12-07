@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root to: "shoes#index"
   resources :companies, only: [:index, :new, :create, :show]
 
   resources :categories, only: [:index, :new, :create, :show]
 
   resources :shoes, only: [:index, :new, :create, :show]
-  namespace :admin do    
-      resources :shoes
+  namespace :admin do  
+      authenticate :user, lambda { |user| user.is_admin? } do  
+        resources :shoes
+        resources :categories   
+        resources :companies   
+      end      
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
