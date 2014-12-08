@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207142953) do
+ActiveRecord::Schema.define(version: 20141207195027) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20141207142953) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",     default: true
   end
 
   create_table "roles", force: true do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20141207142953) do
     t.integer  "count_view",                    default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active_company",                default: true
   end
 
   create_table "users", force: true do |t|

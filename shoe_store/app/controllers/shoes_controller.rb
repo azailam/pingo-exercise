@@ -12,11 +12,14 @@ class ShoesController < ApplicationController
   def show
     @new_comment = Comment.new
     @comments = @shoe.comments.order("updated_at DESC")
+    @shoe_v = Shoe.where('id = ?', params[:id]).first
+    @shoe.update_column('count_view', @shoe_v.count_view + 1) if @shoe_v.present?
   end
 
   # GET /shoes/new
   def new
     @shoe = Shoe.new
+    @companies = Company.active
   end
 
   # POST /shoes

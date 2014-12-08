@@ -2,37 +2,37 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @shoe.price %>
+  <%= @shoe_v.price %>
 </p>
 
 <p>
   <strong>Color:</strong>
-  <%= @shoe.color %>
+  <%= @shoe_v.color %>
 </p>
 
 <p>
   <strong>Size:</strong>
-  <%= @shoe.size %>
+  <%= @shoe_v.size %>
 </p>
 
 <p>
   <strong>Category:</strong>
-  <%= @shoe.category_id %>
+  <%= @shoe_v.category_id %>
 </p>
 
 <p>
   <strong>Company:</strong>
-  <%= @shoe.company_id %>
+  <%= @shoe_v.company_id %>
 </p>
 
 <p>
   <strong>Cover:</strong>
-  <%= image_tag @shoe.cover.url(:thumb) %>
+  <%= image_tag @shoe_v.cover.url(:thumb) %>
 </p>
 
 <p>
   <strong>Count view:</strong>
-  <%= @shoe.count_view %>
+  <%= @shoe_v.count_view %>
 </p>
 
 <%= link_to 'Back', shoes_path %>
@@ -56,10 +56,7 @@
     <%= f.text_field :comment %>
   </span>
   
-  <span class="field">
-    <%= f.label :user_id %>
-    <%= select(:comment, :user_id, options_from_collection_for_select(User.all, :id, :email)) %>
-  </span>
+ 
   <input type = "hidden" name = 'comment[commentable_type]', value=<%= @shoe.class.name%>>
 <input type = "hidden" name = 'comment[commentable_id]', value=<%= @shoe.id%>>
   <span style= "margin-left: 10px;"><%= f.submit %></span>

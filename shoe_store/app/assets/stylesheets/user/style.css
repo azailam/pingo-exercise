@@ -9,7 +9,7 @@ body {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
-	background-image: url(images/taling.jpg);
+	background-image: url(/assets/taling.jpg);
 	background-repeat:repeat-x;
 }
 a:link {
@@ -28,7 +28,7 @@ a:active {
 background-color:#FFFFFF;
 }
 .menu{
-background-image:url(images/menutal.jpg);background-repeat:repeat-x;
+background-image:url(/assets/menutal.jpg);background-repeat:repeat-x;
 }
 .menuLs li { display:inline;margin-left:5px;margin-right:28px;font-size:14px}
 .menuLs ul { display:inline;}
@@ -40,7 +40,7 @@ color:#000000;text-decoration:none;
 }
 
 .topMenu{
-background-image:url(../images/cats.jpg);background-repeat:repeat-x;
+background-image:url(/assets/cats.jpg);background-repeat:repeat-x;
 }
 .LeftMenuHeader{
 font-size:18px;color:#000000;padding-left:10px;
@@ -49,10 +49,10 @@ font-size:18px;color:#000000;padding-left:10px;
 width:192px;margin:0px;padding:0px;
 }
 .RightMenu li{
-height:20px;background-image:url(images/menulft.jpg);background-repeat:repeat-x;color:#000000;list-style: none;padding-left:25px;padding-top:4px;
+height:20px;background-image:url(/assets/menulft.jpg);background-repeat:repeat-x;color:#000000;list-style: none;padding-left:25px;padding-top:4px;
 }
 .BodyBkg{
-background-image:url(images/products.jpg);background-repeat:no-repeat;
+background-image:url(/assets/products.jpg);background-repeat:no-repeat;
 }
 .style1 {
 	font-size: 28px;
