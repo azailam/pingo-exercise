@@ -17,12 +17,12 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @shoe_v.category_id %>
+  <%= @shoe_v.category.name %>
 </p>
 
 <p>
   <strong>Company:</strong>
-  <%= @shoe_v.company_id %>
+  <%= @shoe_v.company.name %>
 </p>
 
 <p>
@@ -30,10 +30,7 @@
   <%= image_tag @shoe_v.cover.url(:thumb) %>
 </p>
 
-<p>
-  <strong>Count view:</strong>
-  <%= @shoe_v.count_view %>
-</p>
+
 
 <%= link_to 'Back', shoes_path %>
 
@@ -59,5 +56,5 @@
  
   <input type = "hidden" name = 'comment[commentable_type]', value=<%= @shoe.class.name%>>
 <input type = "hidden" name = 'comment[commentable_id]', value=<%= @shoe.id%>>
-  <span style= "margin-left: 10px;"><%= f.submit %></span>
+  <span style= "margin-left: 10px;"><%= f.submit  %></span>
 <% end %>

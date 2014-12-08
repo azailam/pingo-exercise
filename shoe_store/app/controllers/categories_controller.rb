@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-
+    @shoes_v = Shoe.all.order("count_view DESC").first(3)
   end
 
   # GET /categories/new
@@ -44,7 +44,7 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_shoes
       @category = Category.find(params[:id])
-      @shoes = @category.shoes.avaiable(params[:id])
+      @shoes = @category.shoes.avaiable(params[:id]).paginate(:page => params[:page], :per_page => 3).order("price DESC")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

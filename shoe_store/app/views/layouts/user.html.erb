@@ -17,8 +17,20 @@
       <tr align="left" valign="top">
         <%=render "layouts/left_panel"%>
         <td width="727">
-          
-		        <%= yield %>
+        
+        <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <th height="38" class="topMenu LeftMenuHeader"> BEST VIEW  </th>
+          </tr>
+          <tr>
+            <td>    <%= render "layouts/best_view" %>   </td>
+          </tr>
+          <tr>
+            <td height="38" class="topMenu LeftMenuHeader" >Featured Products<a href="http://www.templatesfreelance.com"><img src="images/spacer.gif" alt="" width="10" height="10" border="0"></a></td>
+          </tr>
+        </table>
+             
+             <%= yield %>
 		
 		  </td>
       </tr>

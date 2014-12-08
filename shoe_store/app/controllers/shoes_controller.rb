@@ -26,7 +26,7 @@ class ShoesController < ApplicationController
   # POST /shoes.json
   def create
     @shoe = Shoe.new(shoe_params)
-
+    @companies = Company.active
     respond_to do |format|
       if @shoe.save
         format.html { redirect_to @shoe, notice: 'Shoe was successfully created.' }

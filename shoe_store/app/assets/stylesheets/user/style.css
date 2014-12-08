@@ -61,3 +61,7 @@ background-image:url(/assets/products.jpg);background-repeat:no-repeat;
 .Pr{
 float:left;
 }
+
+table tr.odd {background-color: lightgray;}
+table tr th { background-color: gray;}
+table {margin-bottom: 20px;}
