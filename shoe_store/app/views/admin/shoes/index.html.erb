@@ -3,11 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th>Price</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th>Category</th>
       <th>Company</th>
+      <th>Color</th>                
       <th>Cover</th>
       <th>Count view</th>
       <th colspan="3"></th>
@@ -15,22 +12,23 @@
   </thead>
 
   <tbody>
-    <% @shoes.each do |shoe| %>
-      <tr>
-        <td><%= shoe.price %></td>
-        <td><%= shoe.color %></td>
-        <td><%= shoe.size %></td>
-        <td><%= shoe.category_id %></td>
-        <td><%= shoe.company_id %></td>
-        <td><%= shoe.cover %></td>
-        <td><%= shoe.count_view %></td>
-        <td><%= link_to 'Show', admin_shoe_path(shoe) %></td>
-        <td><%= link_to 'Edit', edit_admin_shoe_path(shoe) %></td>
-        <td><%= link_to 'Destroy', admin_shoe_path(shoe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @companies.each do |comp| %>
+    <%@shoes = @companies.find(comp.id).shoes.order("color ASC")%>
+      <% @shoes.each do |shoe| %>
+        <tr>
+          <td><%= shoe.company.name %></td>
+          <td><%= shoe.color %></td>              
+          <td><%= image_tag shoe.cover.url(:thumb) %></td>
+          <td><%= shoe.count_view %></td>
+          <td><%= link_to 'Show', admin_shoe_path(shoe) %></td>
+          <td><%= link_to 'Edit', edit_admin_shoe_path(shoe) %></td>
+          <td><%= link_to 'Destroy', admin_shoe_path(shoe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
+
 
 <br>
 

@@ -1,39 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @shoe.price %>
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Color</th>   
+      <th>size</th>               
+      <th>Price</th>  
+      <th>Cover</th>
+      <th>Category</th>  
+      <th>Count view</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Color:</strong>
-  <%= @shoe.color %>
-</p>
+  <tbody>
+          <tr>
+          <td><%= @shoe.company.name %></td>
+          <td><%= @shoe.color %></td>   
+          <td><%= @shoe.size %></td>              
+          <td><%= @shoe.price %></td>             
+          <td><%= image_tag @shoe.cover.url(:thumb) %></td>
+          <td><%= @shoe.category.name %></td>   
+          <td><%= @shoe.count_view %></td>                        
+        </tr>          
+  </tbody>
+</table>
 
-<p>
-  <strong>Size:</strong>
-  <%= @shoe.size %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @shoe.category_id %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @shoe.company_id %>
-</p>
-
-<p>
-  <strong>Cover:</strong>
-  <%= @shoe.cover %>
-</p>
-
-<p>
-  <strong>Count view:</strong>
-  <%= @shoe.count_view %>
-</p>
-
-<%= link_to 'Edit', edit_admin_shoe_path(@shoe) %> |
 <%= link_to 'Back', admin_shoes_path %>

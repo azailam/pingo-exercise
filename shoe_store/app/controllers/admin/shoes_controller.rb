@@ -4,7 +4,7 @@ class Admin::ShoesController < Admin::AdminController
   # GET /shoes
   # GET /shoes.json
   def index
-    @shoes = Shoe.all
+    @companies = Company.all.order("name ASC")    
   end
 
   # GET /shoes/1
