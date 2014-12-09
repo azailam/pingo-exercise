@@ -65,3 +65,11 @@ float:left;
 table tr.odd {background-color: lightgray;}
 table tr th { background-color: gray;}
 table {margin-bottom: 20px;}
+
+.pagging { height:20px; padding:8px 10px; line-height:19px; color:#949494; }
+.pagging a{ background:url(/assets/pagging.gif) repeat-x 0 0; height:20px; float:left; padding:0 8px; border:solid 1px #d5d5d5; text-decoration: none; color:#949494; margin-left:5px;  }
+.pagging a:hover { border-color:#8c3521; background:#ba4c32; color:#fff; }
+.pagging span{ float:left; margin-left:5px; padding-top:2px; }
+
+.left, .alignleft { float:left; display:inline; }
+.right, .alignright { float:center; display:inline; }

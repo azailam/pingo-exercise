@@ -17,4 +17,7 @@ Company.find_or_create_by(name: "Giay Viet")
 Shoe.find_or_create_by(price: "100", color: "Do", size: "40", category_id: "3", company_id: "1")
 Shoe.find_or_create_by(price: "200", color: "Trang", size: "45", category_id: "2", company_id: "2")
 Shoe.find_or_create_by(price: "500", color: "Den", size: "42", category_id: "1", company_id: "3")
+Shoe.find_or_create_by(price: "220", color: "Xam", size: "30", category_id: "1", company_id: "2")
+Shoe.find_or_create_by(price: "330", color: "Den Trang", size: "42", category_id: "3", company_id: "3")
+Shoe.find_or_create_by(price: "300", color: "Den", size: "35", category_id: "2", company_id: "1")
 

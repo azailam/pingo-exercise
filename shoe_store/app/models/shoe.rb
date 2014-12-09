@@ -1,8 +1,7 @@
 class Shoe < ActiveRecord::Base
 	validates :color, :presence => true 
 	validates_numericality_of :price, greater_than: 0
-	validates_numericality_of :size, greater_than: 0
-	validates :cover, :presence => true
+	validates_numericality_of :size, greater_than: 0	
 	belongs_to :category
 	belongs_to :company
 	acts_as_commentable

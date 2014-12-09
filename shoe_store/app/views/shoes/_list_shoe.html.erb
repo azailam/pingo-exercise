@@ -23,5 +23,11 @@
   </tr>
 </table>
  <% end %>
-<%= page_entries_info @shoes, :entry_name => 'shoe'  %>
-<%= will_paginate @shoes %>
+ <div class="pagging">
+              <div class="left"><%= page_entries_info @shoes, :entry_name => 'shoe'  %></div>
+              <div class="right">
+                <%= will_paginate @shoes %>
+              </div>
+            </div>
+
+
